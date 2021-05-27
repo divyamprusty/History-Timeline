@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.get('/number', (req, res) => {
+    res.send('Put any number after (http://localhost:3000/number/) in the url to check whether it is ODD or EVEN')
+})
+
 app.get('/number/:num', (req, res) => {
     var num = req.params.num; {
     if (num % 2 == 0){
@@ -13,5 +17,5 @@ app.get('/number/:num', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at https://localhost:${port}`)
+    console.log(`Server running at port: http://localhost:${port}/number`)
 })
